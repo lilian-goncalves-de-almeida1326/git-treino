@@ -1,28 +1,28 @@
 ## Bridge Pattern
 ```mermaid
-classDiagramBridgPattern
-    class Abstraction {
+classDiagram
+    class abstraction {
         -implement:Implementor
         +function:()
     }
 
-    class RefinedAbstraction {
+    class refinedAbstraction {
         +redefinedFunction()
     }
 
-    class Implementor {
+    class implementor {
         +implementation()
         +adicionarNovaAba(URL url)
         +atualizarPagina()
     }
 
-    class ConcreteImplementor {
+    class concreteImplementor {
         +implementation()
     }
 
-    Abstraction o-- Implementor
-    Abstraction <|-- RefinedAbstraction
-    Implementor <|-- ConcreteImplementor
+    abstraction o-- implementor
+    abstraction <|-- refinedAbstraction
+    implementor <|-- concreteImplementor
 ```
 ##
 ```mermaid
