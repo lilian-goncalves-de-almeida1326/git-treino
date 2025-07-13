@@ -2,8 +2,8 @@
 ```mermaid
 classDiagram
     class abstraction {
-        -implement:Implementor
-        +function:()
+        -implement:implementor
+        +function()
     }
 
     class refinedAbstraction {
@@ -20,53 +20,25 @@ classDiagram
         +implementation()
     }
 
-    abstraction o-- implementor
+    abstraction o-- implementor : bridge pattern
     abstraction <|-- refinedAbstraction
     implementor <|-- concreteImplementor
 ```
-##
+##Decorator
 ```mermaid
 classDiagram
-    class ReprodutorMusical {
-        -musicaAtual:Musica
-        -musicas:List<Musica>
-        +tocar()
-        +pausar()
-        +selecionarMusica(String musica)
+    class masterClass {
+        -variable:Type
+        +getValue()*
     }
 
-    class AparelhoTelefonico {
-        +ligar(String numero)
-        +atender()
-        +iniciarCorreioVoz()
+    class sonClassOne {
+        +getValue()
+    }
+    class sonClassTwo {
+        +getValue()
     }
 
-    class NavegadorInternet {
-        -linkAtual:URL
-        -linksAbertos:List<URL>
-        +exibirPagina(String url)
-        +adicionarNovaAba(URL url)
-        +atualizarPagina()
-    }
-
-    class iPhone {
-        #reprodutor:ReprodutorMusical
-        #telefone:AparelhoTelefonico
-        #navegador:NavegadorInternet
-    }
-
-    class Musica {
-        -titulo:String
-        -autor:String
-    }
-
-    class URL {
-        -link:String
-    }
-
-    iPhone --> ReprodutorMusical
-    iPhone --> AparelhoTelefonico
-    iPhone --> NavegadorInternet
-    Musica --> ReprodutorMusical
-    URL --> NavegadorInternet
+    masterClass <|-- sonClassOne
+    masterClass <|-- sonClassTwo
 ```
