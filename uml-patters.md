@@ -190,3 +190,5 @@ classDiagram
     masterClass <|-- sonClassOne
     masterClass <|-- sonClassTwo
 ```
+## References
+[mermaid syntax](https://mermaid.js.org/syntax/classDiagram.html)
