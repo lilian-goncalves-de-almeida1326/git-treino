@@ -1,0 +1,28 @@
+git init ###criar novo repositorio local
+
+git status ###ver o status do repositorio local
+
+git add . #### adicionar as alterações no repositorio no git
+
+git commit -m "mensagem" ###commit o repositorio local
+
+git push ### enviar os dados locais para o github
+
+git checkout -b feature/#205
+
+git branch
+
+git status
+
+git add .
+
+git commit -m "feat(#205): mudando os textos do componente card level"
+
+git push origin feature/#205
+
+
+###Como fazer pull do repositório da branch remota principal
+git pull origin main
+
+###Como fazer pull do repositório da branch remota diferente da main, exemplo
+git pull origin feature/#1
