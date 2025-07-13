@@ -24,7 +24,7 @@ classDiagram
     abstraction <|-- refinedAbstraction
     implementor <|-- concreteImplementor
 ```
-##Decorator
+## Decorator
 ```mermaid
 classDiagram
     class masterClass {
@@ -41,4 +41,29 @@ classDiagram
 
     masterClass <|-- sonClassOne
     masterClass <|-- sonClassTwo
+```
+## Bridge Pattern
+```mermaid
+classDiagram
+    class facadaClass {
+        -implement:implementor
+        +functionA()
+        +functionB(String text):String
+        +functionC(Int number):Int
+    }
+
+    class classA {
+        +functionA()
+    }
+
+    class classB {
+        +functionB(String text):String
+    }
+
+    class classC {
+        +functionC(Int number):Int
+    }
+    facadaClass *--> classA
+    facadaClass *--> classB
+    facadaClass *--> classC
 ```
